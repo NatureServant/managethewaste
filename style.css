@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+body{
+    background-color: #8730d7;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #8730d7;
+    width: 100%;
+}
+.container{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 1px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+h1{
+    font-size: 45px;
+    color: #210e35;
+    margin-bottom: 5px;
+}
+.form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+input[type="file"]{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    outline: 2px solid #371855;
+    cursor: pointer;
+}
+button{
+    padding: 10px 20px;
+    background-color: #371855;
+    color: #fff;
+    border: 2px solid #371855;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: .3s;
+    font-size: 16px;
+}
+button:hover{
+    background-color: #512481;
+    color: #fff;
+}
+#result {
+    margin-top: 20px;
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    color: #220b2e;
+    background-color: #f6f3ff;
+    white-space: pre-wrap;
+    display: none;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.result-heading {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 12px;
+    color: #371855;
+}
+
+.result-bold {
+    font-weight: 600;
+}
+
+.bin-word {
+    color: #512481;
+    font-weight: 700;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #210e35;
+}
+.additional{
+    text-align: center;
+    font-size: 16px;
+    color: #210e35;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 100%;
+        margin-top: 50px;
+    }
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+    .form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    input[type="file"] {
+        margin-bottom: 10px;
+    }
+    button {
+        margin-left: 0;
+    }
+    #result {
+        text-align: left;
+    }
+}
