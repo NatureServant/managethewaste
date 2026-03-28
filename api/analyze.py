@@ -1,6 +1,7 @@
 from groq import Groq
 import base64
 import os
+import json
 
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
@@ -11,7 +12,7 @@ def handler(request):
     if request.method != "POST":
         return {
             "statusCode": 405,
-            "body": "Method not allowed"
+            "body": json.dumps({"error": "Method not allowed"})
         }
 
     try:
@@ -20,7 +21,7 @@ def handler(request):
         if not image_file:
             return {
                 "statusCode": 400,
-                "body": "No image uploaded"
+                "body": json.dumps({"error": "No image uploaded"})
             }
 
         image_data = image_file.read()
@@ -54,13 +55,18 @@ def handler(request):
 
         answer = chat_completion.choices[0].message.content
 
+        
+
         return {
             "statusCode": 200,
-            "body": answer
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": json.dumps({"result": answer})
         }
 
     except Exception as e:
         return {
             "statusCode": 500,
-            "body": str(e)
+            "body": json.dumps({"error": f"{str(e)}"})
         }
