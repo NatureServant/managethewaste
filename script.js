@@ -16,7 +16,7 @@ searchBtn.addEventListener('click', async () => {
     resultArea.innerText = 'Analyzing image, please wait...';
 
     try {
-        const response = await fetch('/api/analyze', {
+        const response = await fetch('/analyze', {
             method: 'POST',
             body: formData,
         });
